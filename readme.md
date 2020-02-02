@@ -39,6 +39,9 @@ A fast and feature-rich implementation of an ESP8266/ESP32 webserver to control 
 - Infrared remotes (24-key RGB, receiver required)  
 - Simple timers/schedules (time from NTP, timezones/DST supported)  
 
+** [SRS] Add configuration for Fairy Nest SP501E WS2812B board **
+** [SRS] Add photos of Fairy Nest SP501E board showing flash pads **
+
 ### Quick start guide and documentation:
 
 See the [wiki](https://github.com/Aircoookie/WLED/wiki)!
