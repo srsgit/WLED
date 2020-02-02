@@ -4,6 +4,12 @@
 
 void wledInit()
 {
+#ifdef WIOLINK
+  // Enable Grove power
+  pinMode(15, OUTPUT);
+  digitalWrite(15, 1);
+#endif
+
   EEPROM.begin(EEPSIZE);
   ledCount = EEPROM.read(229) + ((EEPROM.read(398) << 8) & 0xFF00);
   if (ledCount > MAX_LEDS || ledCount == 0) ledCount = 30;
