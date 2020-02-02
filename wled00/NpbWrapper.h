@@ -3,7 +3,10 @@
 #define NpbWrapper_h
 
 //PIN CONFIGURATION
-#define LEDPIN 2      //strip pin. Any for ESP32, gpio2 or 3 is recommended for ESP8266 (gpio2/3 are labeled D4/RX on NodeMCU and Wemos)
+
+#ifdef WIOLINK
+
+#define LEDPIN 14      //strip pin. Any for ESP32, gpio2 or 3 is recommended for ESP8266 (gpio2/3 are labeled D4/RX on NodeMCU and Wemos)
 //#define USE_APA102  // Uncomment for using APA102 LEDs.
 //#define USE_WS2801  // Uncomment for using WS2801 LEDs (make sure you have NeoPixelBus v2.5.6 or newer)
 //#define USE_LPD8806 // Uncomment for using LPD8806
@@ -11,12 +14,32 @@
 //#define WLED_USE_H801 //H801 controller. Please uncomment #define WLED_USE_ANALOG_LEDS as well
 //#define WLED_USE_5CH_LEDS  //5 Channel H801 for cold and warm white
 
-#define BTNPIN  0  //button pin. Needs to have pullup (gpio0 recommended)
-#define IR_PIN  4  //infrared pin (-1 to disable)  MagicHome: 4, H801 Wifi: 0
-#define RLYPIN 12  //pin for relay, will be set HIGH if LEDs are on (-1 to disable). Also usable for standby leds, triggers,...
+#define BTNPIN 12  //button pin. Needs to have pullup (gpio0 recommended)
+#define IR_PIN -1  //infrared pin (-1 to disable)  MagicHome: 4, H801 Wifi: 0
+#define RLYPIN -1  //pin for relay, will be set HIGH if LEDs are on (-1 to disable). Also usable for standby leds, triggers,...
 #define AUXPIN -1  //debug auxiliary output pin (-1 to disable)
 
 #define RLYMDE 1  //mode for relay, 0: LOW if LEDs are on 1: HIGH if LEDs are on
+#endif
+
+#ifdef FAIRYNEST
+
+#define LEDPIN 3      //strip pin. Any for ESP32, gpio2 or 3 is recommended for ESP8266 (gpio2/3 are labeled D4/RX on NodeMCU and Wemos)
+//#define USE_APA102  // Uncomment for using APA102 LEDs.
+//#define USE_WS2801  // Uncomment for using WS2801 LEDs (make sure you have NeoPixelBus v2.5.6 or newer)
+//#define USE_LPD8806 // Uncomment for using LPD8806
+//#define WLED_USE_ANALOG_LEDS //Uncomment for using "dumb" PWM controlled LEDs (see pins below, default R: gpio5, G: 12, B: 15, W: 13)
+//#define WLED_USE_H801 //H801 controller. Please uncomment #define WLED_USE_ANALOG_LEDS as well
+//#define WLED_USE_5CH_LEDS  //5 Channel H801 for cold and warm white
+
+#define BTNPIN 1  //button pin. Needs to have pullup (gpio0 recommended)
+#define IR_PIN -1  //infrared pin (-1 to disable)  MagicHome: 4, H801 Wifi: 0
+#define RLYPIN -1  //pin for relay, will be set HIGH if LEDs are on (-1 to disable). Also usable for standby leds, triggers,...
+#define AUXPIN -1  //debug auxiliary output pin (-1 to disable)
+
+#define RLYMDE 1  //mode for relay, 0: LOW if LEDs are on 1: HIGH if LEDs are on
+
+#endif
 
 //END CONFIGURATION
 
