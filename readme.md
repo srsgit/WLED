@@ -42,8 +42,16 @@ A fast and feature-rich implementation of an ESP8266/ESP32 webserver to control 
 ### Local changes by SRS:
 
 - [SRS] Add configuration for Fairy Nest SP501E WS2812B board
-- [SRS] Needed to fix eagle.
+- [SRS] Needed to fix eagle.ld to solve link phase - copy and rename similar ld file
 - [SRS] Add photos of Fairy Nest SP501E board showing flash pads **
+- [SRS]  Small square pin (1) to pin (5)
+- [SRS]  Pin1 3v3
+- [SRS]  Pin2 Tx (from SP501E)(Rx on FTDI232 board)
+- [SRS]  Pin3 Rx
+- [SRS]  Pin4 GPIO0 (Connect to GND and Power Cycle to enter Boot mode)
+- [SRS]  Pin5 GND
+- [SRS]  Use FTDI232R USB Serial Module connected to flash pads
+
 
 ### Quick start guide and documentation:
 
